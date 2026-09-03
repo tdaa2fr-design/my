@@ -1,0 +1,14 @@
+SET left_count = 0
+SET right_count = 0
+FOR i FROM 1 TO 10:
+    SET num = RANDOM_NUMBER()
+    IF num MOD 2 == 0 THEN
+        PRINT "RIGHT"
+        SET right_count = right_count + 1
+    ELSE
+        PRINT "LEFT'
+        SET left_count = left_count + 1
+    ENDIF
+ENDFOR
+PRINT "Total LEFT: " + left_count
+PRINT "Total RIGHT: " + RIGHT_count
