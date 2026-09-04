@@ -1,3 +1,74 @@
+1. Convert a user-input into all caps, print the result.
+
+FUNCTION to_uppercase(input_string)
+    SET result_string TO ""
+
+    FOR EACH character IN input_string
+        SET ascii_value TO GET _ASCII(character)
+
+        IF ascii_value >= 97 AND ascii_value <= 122 THEN
+            # Subtract 32 to move from lowercase to uppercase
+            SET new_ascii TO ascii_value - 32
+            APPEND CONVET_TO_CHAR(new_ascii) TO result_string
+        ELSE
+            # Keep digits, symbols, or existing capitals as they are
+            APPEND character TO result_string
+        END IF
+    END FOR
+    RETURN result_string
+END FUNCTION
+
+
+
+2. Have user input two numbers, add them together and print the result.
+
+def get_number(prompt):
+    while True:
+        try:
+            return float(input(prompt))
+        except ValueError:
+            print(" that's not a valid number! Please try again.")
+
+num1 = get_number("Enter Number 1: ")
+num2 = get_number("Enter Number 2: ")
+
+print(f"Output: {num1 + num2}")
+
+3. Get an unknown amount of numbers from the user and add them together, print out the result.
+
+running_sum = 0
+while True:
+    try:
+        num = int(input("Number: "))
+        running_sum += num
+
+        choice = input("Another number? (y/n) ").lower()
+        if choice != 'y':
+            break
+    except ValueError:
+        print("Please enter a valid whale number.")
+print(f"Output:  {running_sum}")
+
+4. Have the user define a maximum whole number, print out a random number between 0 and their number. Allow the user to play again or quit.
+
+
+import random
+
+play = True
+
+while play:
+    max_val = int(input("Max Number: "))
+
+    print("Output:", random.randint(0, max_val))
+    choice = input("New Number (y/n)? ").lower()
+    if choice == 'n':
+        play = False
+
+
+
+5. Get a random number. If the number is even print “RIGHT”, if it’s odd, print “LEFT”. Do this ten times. Print out how many times it was “LEFT” and how many times it was “RIGHT”.
+
+
 SET left_count = 0
 SET right_count = 0
 FOR i FROM 1 TO 10:
